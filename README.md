@@ -42,7 +42,13 @@ This will create following resources in the cloud:
 
 The hosted UI will serve the Login page. Try logging in with random username/password and you will see an error. This is because there are no users exists.
 
-#### Set lambda permissions 
+### Update lambda & its permissions
+##### Update lambda
+In _amplify/backend/function/createUser/src/app.js_ replace:
+* `<your-user-pool-id>` with the newly created user pool id found in _src/aws-exports.js_
+*  `<your-tmp-password>` with desired temporary password
+
+#### Give permissions
 We have to give the newly created lambda to create, delete users in the newly created userpool in AWS cognito. For this, open _amplify/backend/function/createUser/createUser-cloudformation-template.json_ and add following statement to `lambdaexecutionpolicy`
 
 ```
@@ -68,7 +74,7 @@ We have to give the newly created lambda to create, delete users in the newly cr
 }
 ```
 
-Remember to replace `<your-user-pool-id>` with your newly created user pool id. You can find this id in _src/aws-exports.js_
+Remember to replace `<your-user-pool-id>` with your newly created user pool id.
 
 Then in the root folder run `amplify push`
 
@@ -82,7 +88,10 @@ This repo comes with an example to demonstrate calling API, we just created with
 
 Run this example and it will create a new user.
 
+All Set
+---------
 
+Now try to log in to the UI and it should start working. It will allow you to set 2 factor authentication and redirect on success login. Enjoy!!
 
 
 
