@@ -8,8 +8,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@aws-amplify/api": "^1.0.39",
+    "@aws-amplify/cli": "^1.8.5",
+    "@aws-amplify/pubsub": "^1.0.30",
+    "aws-amplify": "^1.1.32",
+    "aws-amplify-vue": "^0.2.13",
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-qrcode-component": "^2.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
