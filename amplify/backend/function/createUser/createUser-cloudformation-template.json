@@ -62,8 +62,8 @@
 				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "cognitoidp-develop-20190727201829-deployment",
-					"S3Key": "amplify-builds/createUser-764b374c3448736f4f6c-build.zip"
+					"S3Bucket": "cognitoidp-develop-20190801141913-deployment",
+					"S3Key": "amplify-builds/createUser-4e41754435554e624963-build.zip"
 				}
 			}
 		},
@@ -126,9 +126,7 @@
 							"Action": [
 								"logs:CreateLogGroup",
 								"logs:CreateLogStream",
-								"logs:PutLogEvents",
-								"cognito-idp:AdminDeleteUser",
-								"cognito-idp:AdminCreateUser"
+								"logs:PutLogEvents"
 							],
 							"Resource": {
 								"Fn::Sub": [
@@ -146,24 +144,6 @@
 									}
 								]
 							}
-						},
-						{
-							"Effect": "Allow",
-							"Action": [
-								"cognito-idp:AdminDeleteUser",
-								"cognito-idp:AdminCreateUser"
-							],
-							"Resource": [
-								"arn:aws:cognito-idp:${region}:${account}:userpool/<your-user-pool-id>",
-								{
-									"region": {
-										"Ref": "AWS::Region"
-									},
-									"account": {
-										"Ref": "AWS::AccountId"
-									}
-								}
-							]
 						}
 					]
 				}

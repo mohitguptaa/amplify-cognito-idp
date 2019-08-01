@@ -2,7 +2,7 @@ var https = require('https'),
     aws4  = require('aws4');
 
 var postData = JSON.stringify({
-        'email' : 'a@gmail.com'
+        'email' : '<user-email>'
 });
 
 var opts = {

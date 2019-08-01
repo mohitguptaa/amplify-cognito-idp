@@ -49,7 +49,6 @@ export default {
     async onSignIn(username, password) {
       try {
         this.user = await Auth.signIn(username, password);
-        console.log(this.user);
 
         if (this.user.challengeName === "NEW_PASSWORD_REQUIRED") {
           this.currentChallenge = "NewUser";
@@ -60,7 +59,7 @@ export default {
           this.currentChallenge = "TOTPSetup";
         }
       } catch (err) {
-        console.log(err);
+        alert(err.message);
       }
     },
     async onNewPassword(newPassword, name) {
@@ -76,26 +75,24 @@ export default {
         this.totpCode = await this.getTotpCode();
         this.currentChallenge = "TOTPSetup";
       } catch (err) {
-        console.log(err);
+        alert(err.message);
       }
     },
     async onVerifyCode(verificationCode) {
       try {
         await Auth.confirmSignIn(this.user, verificationCode, "SOFTWARE_TOKEN_MFA");
-        console.log(this.user);
         window.location.href = "http://www.google.com";
       } catch (err) {
-        console.log(err);
+        alert(err.message);
       }
     },
     async onVerifyCodeAndSetMFA(verificationCode) {
       try {
         await Auth.verifyTotpToken(this.user, verificationCode);
         await Auth.setPreferredMFA(this.user, "TOTP");
-        console.log(this.user);
         window.location.href = "some url";
       } catch (err) {
-        console.log(err);
+        alert(err.message);
       }
     }
   }
