@@ -61,10 +61,10 @@
     "hostedUI": true,
     "hostedUIDomainName": "myidp",
     "newCallbackURLs": [
-        ""
+        "https://www.google.com"
     ],
     "newLogoutURLs": [
-        ""
+        "https://www.google.com"
     ],
     "AllowedOAuthFlows": "code",
     "AllowedOAuthScopes": [
