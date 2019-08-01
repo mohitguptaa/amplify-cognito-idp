@@ -61,10 +61,10 @@
     "hostedUI": true,
     "hostedUIDomainName": "myidp",
     "newCallbackURLs": [
-        "https://www.monotype.com/"
+        ""
     ],
     "newLogoutURLs": [
-        "https://www.monotype.com/"
+        ""
     ],
     "AllowedOAuthFlows": "code",
     "AllowedOAuthScopes": [
@@ -75,7 +75,7 @@
     ],
     "authProvidersUserPool": [],
     "hostedUIProviderMeta": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.monotype.com/\"],\"LogoutURLs\":[\"https://www.monotype.com/\"]}",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.google.com/\"],\"LogoutURLs\":[\"https://www.google.com/\"]}",
     "parentStack": {
         "Ref": "AWS::StackId"
     },

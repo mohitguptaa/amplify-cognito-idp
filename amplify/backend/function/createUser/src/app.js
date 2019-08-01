@@ -18,7 +18,6 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const AWS = require('aws-sdk');
-//AWS.config.loadFromPath('./aws_config.json');
 
 // declare a new express app
 var app = express()
@@ -55,14 +54,14 @@ app.get('/user/*', function(req, res) {
 app.post('/user', async function(req, res) {
   // Add your code here
   var params = {
-    UserPoolId: 'us-east-1_Wu0kJtMz6', /* required */
+    UserPoolId: '<your-user-pool-id>', /* required */
     Username: req.body.email, /* required */
     DesiredDeliveryMediums: [
       'EMAIL',
       /* more items */
     ],
     ForceAliasCreation: true || false,
-    TemporaryPassword: 'tmp_pswd',
+    TemporaryPassword: '<your-tmp-password>',
   };
   const cognito = new AWS.CognitoIdentityServiceProvider();
   try {
